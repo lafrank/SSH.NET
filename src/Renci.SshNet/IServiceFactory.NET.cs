@@ -1,5 +1,6 @@
 ﻿using System;
 using Renci.SshNet.NetConf;
+using System.Xml;
 
 namespace Renci.SshNet
 {
@@ -11,9 +12,10 @@ namespace Renci.SshNet
         /// </summary>
         /// <param name="session">The <see cref="ISession"/> to create the <see cref="INetConfSession"/> in.</param>
         /// <param name="operationTimeout">The operation timeout.</param>
+        /// <param name="ClienCapabilities">The XmlDoxument object describing NetConf client capabilities</param>
         /// <returns>
         /// An <see cref="INetConfSession"/>.
         /// </returns>
-        INetConfSession CreateNetConfSession(ISession session, TimeSpan operationTimeout);
+        INetConfSession CreateNetConfSession(ISession session, TimeSpan operationTimeout, XmlDocument ClienCapabilities);
     }
 }
